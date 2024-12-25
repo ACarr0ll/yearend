@@ -2,8 +2,6 @@ const express = require('express');
 const { createTask } = require('./models/task.model.js');
 const cors = require('cors');
 
-
-
 const app = express();
 app.use(cors());
 app.use(express.json())
@@ -23,5 +21,5 @@ try {
 });
 
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}/`);
+    console.log(`Server running`);
 });
