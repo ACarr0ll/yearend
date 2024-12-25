@@ -1,14 +1,20 @@
 const sql = require('mssql');
+const { HttpsProxyAgent } = require('https-proxy-agent');
 
 const config = {
-    user: 'yearend',
-    password: 'P!iJA7JbWgc89pv',
-    server: 'yearendreview.database.windows.net',
-    database: 'YearEndReview',
+    user: process.env.dbuser,
+    password: process.env.password,
+    server: process.env.server,
+    database: process.env.database,
     options: {
         encrypt: true // Use this if you're on Windows Azure
     }
 };
+
+if (process.env.PROXIMO_URL) {
+    const proxyAgent = new HttpsProxyAgent(process.env.PROXIMO_URL);
+    config.options.agent = proxyAgent;
+}
 
 const poolPromise = new sql.ConnectionPool(config)
     .connect()
