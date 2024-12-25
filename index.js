@@ -1,7 +1,7 @@
 const express = require('express');
 const { createTask } = require('./models/task.model.js');
 const cors = require('cors');
-const HttpsProxyAgent = require('https-proxy-agent');
+const { HttpsProxyAgent } = require('https-proxy-agent');
 
 const app = express();
 app.use(cors());
