@@ -26,7 +26,3 @@ try {
     res.status(500).json({ message:  error.message });
 }
 });
-
-app.listen(() => {
-    console.log(`Server running`);
-});
