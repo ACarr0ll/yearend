@@ -19,6 +19,6 @@ try {
 }
 });
 
-app.listen(port, () => {
+app.listen(() => {
     console.log(`Server running`);
 });
