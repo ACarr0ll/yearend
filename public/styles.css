@@ -14,7 +14,9 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 90%;
+    max-width: 400px;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -38,6 +40,8 @@ input, textarea, button {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 button {
@@ -49,4 +53,18 @@ button {
 
 button:hover {
     background-color: #218838;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input, textarea, button {
+        padding: 8px;
+    }
 }
