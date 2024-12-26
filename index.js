@@ -18,6 +18,10 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+app.get('/login.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'login.html'));
+});
+
 app.post('/api/tasks', async (req, res) => {
 try {
     const task = await createTask(req.body);
