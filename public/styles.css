@@ -57,8 +57,7 @@ button:hover {
 
 .notification {
     display: none;
-    background-color: #000000;
-    color: #28a745;
+    color: white;
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 4px;
