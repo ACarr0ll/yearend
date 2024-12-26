@@ -55,6 +55,16 @@ button:hover {
     background-color: #218838;
 }
 
+.notification {
+    display: none;
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    text-align: center;
+}
+
 @media (max-width: 600px) {
     .container {
         padding: 15px;

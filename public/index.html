@@ -9,6 +9,7 @@
 <body>
     <div class="container">
         <h1>Create Task</h1>
+        <div id="notification" class="notification"></div>
         <form id="taskForm">
             <label for="eventDate">Event Date:</label>
             <input type="datetime-local" id="eventDate" name="eventDate" required>
@@ -50,7 +51,12 @@
             });
 
             const result = await response.json();
-            alert(result.message);
+            const notification = document.getElementById('notification');
+            notification.textContent = result.message;
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
         });
 
         document.getElementById('loginButton').addEventListener('click', function() {
