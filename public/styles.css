@@ -4,9 +4,72 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 100vh;
+}
+
+header {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked + .menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+}
+
+#menu-toggle:checked + .menu li {
+    margin: 10px 0;
+    text-align: center;
 }
 
 .container {
@@ -17,6 +80,7 @@ body {
     width: 90%;
     max-width: 400px;
     box-sizing: border-box;
+    margin-top: 20px;
 }
 
 h1 {
@@ -75,5 +139,14 @@ button:hover {
 
     input, textarea, button {
         padding: 8px;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+    }
+
+    .hamburger {
+        display: block;
     }
 }
