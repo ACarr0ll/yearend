@@ -140,6 +140,15 @@ button:hover {
 }
 
 @media (max-width: 600px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
     .container {
         padding: 15px;
     }
@@ -150,14 +159,5 @@ button:hover {
 
     input, textarea, button {
         padding: 10px; /* Adjusted padding for smaller screens */
-    }
-
-    .menu {
-        display: none;
-        flex-direction: column;
-    }
-
-    .hamburger {
-        display: block;
     }
 }
