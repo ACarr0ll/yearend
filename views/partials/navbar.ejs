@@ -1,0 +1,16 @@
+<nav>
+    <div class="logo">MyApp</div>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+    <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/submissions">Submissions</a></li>
+        <% if (user) { %>
+            <li><a href="/api/logout">Logout</a></li>
+        <% } else { %>
+            <li><a href="/login">Login</a></li>
+        <% } %>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>

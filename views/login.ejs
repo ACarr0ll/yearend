@@ -8,17 +8,7 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">MyApp</div>
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="hamburger">&#9776;</label>
-            <ul class="menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="/login.html">Login</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+        <%- include('partials/navbar', { user: user }) %>
     </header>
     <div class="container">
         <h1>Login</h1>
@@ -32,6 +22,8 @@
             <button type="submit">Login</button>
         </form>
         <button id="goBackButton">Go Back</button>
+        <p>Don't have an account? <a href="/createUser">Create New User</a></p>
+        <div id="loginMessage" class="notification"></div>
     </div>
 
     <script>
@@ -51,7 +43,22 @@
             });
 
             const result = await response.json();
-            alert(result.message);
+            const loginMessage = document.getElementById('loginMessage');
+            loginMessage.textContent = result.message;
+            if (response.status === 200) {
+                loginMessage.style.backgroundColor = '#28a745'; // Green for success
+                loginMessage.style.display = 'block';
+                setTimeout(() => {
+                    loginMessage.style.display = 'none';
+                    window.location.href = '/';
+                }, 3000);
+            } else {
+                loginMessage.style.backgroundColor = '#dc3545'; // Red for error
+                loginMessage.style.display = 'block';
+                setTimeout(() => {
+                    loginMessage.style.display = 'none';
+                }, 3000);
+            }
         });
 
         document.getElementById('goBackButton').addEventListener('click', function() {
