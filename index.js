@@ -13,7 +13,7 @@ app.use(express.json());
 // Configure session management
 app.use(session({
     store: new SQLiteStore,
-    secret: 'your-secret-key',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: { secure: false } // Set to true if using HTTPS
