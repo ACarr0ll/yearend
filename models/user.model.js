@@ -1,5 +1,5 @@
 const { sql, poolPromise } = require('../db');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 async function createUser(user) {
     try {
