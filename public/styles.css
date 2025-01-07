@@ -30,6 +30,16 @@ nav {
     font-weight: bold;
 }
 
+.logo a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.logo a:hover {
+    color: #ff6347; /* Change to desired hover color */
+}
+
 .menu {
     list-style: none;
     display: flex;
@@ -115,13 +125,19 @@ button:hover {
 }
 
 @media (max-width: 600px) {
-    .menu {
+    nav {
         flex-direction: column;
         align-items: center;
     }
 
+    .menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     .menu li {
-        margin: 10px 0;
+        margin: 10px;
     }
 
     .container {
